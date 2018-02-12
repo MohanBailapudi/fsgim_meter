@@ -3,6 +3,8 @@ Defines MeasurementmetadataType class
 """
 
 from fsgim_meter.measurements.item_base_type import ItemBaseType
+from fsgim_meter.common_classes_enums.enums import UnitSymbolKind
+from fsgim_meter.common_classes_enums.enums import SiScaleCodeType
 
 
 class MeasurementMetadataType(ItemBaseType):
@@ -23,8 +25,8 @@ class MeasurementMetadataType(ItemBaseType):
         :param resolution:
         """
         self.item_description = item_description
-        self.item_units = item_units
-        self.si_scale_Code = si_scale_code
+        self.item_units = UnitSymbolKind.get_code(item_units)
+        self.si_scale_Code = SiScaleCodeType.get_code(si_scale_code)
         self.accumulation_characteristic = accumulation_characteristic
         self.data_qualifier = data_qualifier
         self.description = description
