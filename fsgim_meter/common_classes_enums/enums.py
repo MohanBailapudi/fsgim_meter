@@ -7,11 +7,19 @@ from enum import Enum
 class MeasurementEnum(Enum):
 
     @classmethod
-    def get_code(cls,val):
+    def get_code(cls, val):
+        """
+        returns the value of a given attribute in an enum collection
+        :param val: attribute name in the enum
+        :return: corresponding attribute value in the enum
+        """
         if val == "":
-            return val
-        elif any(val == item.value for item in cls) is True:
-            return cls[val]
+            return ""
+        if val == 'in' and cls.__name__ == 'UnitSymbolKind':
+            val = 'inch'
+        if val not in cls.__members__:
+            raise ValueError("Type not defined in: " + cls.__name__)
+        return cls[val].value
 
 
 class AccumulationKind(MeasurementEnum):
