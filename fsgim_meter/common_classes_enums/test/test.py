@@ -4,7 +4,9 @@ from fsgim_meter.common_classes_enums.enums import DataQualifierKind
 from fsgim_meter.common_classes_enums.enums import QualityOfReading
 from fsgim_meter.common_classes_enums.enums import UnitSymbolKind
 class TestEnums(unittest.TestCase):
-
+    """
+    Tests all enum classes
+    """
     def test_create_accumulation_kind(self):
         test_val = 'none'
         test_accumulation_kind_object = AccumulationKind[test_val]
@@ -43,7 +45,7 @@ class TestEnums(unittest.TestCase):
 
     def test_create_quality_of_reading(self):
         test_val = 'estimated'
-        test_data_qualifier_kind_object = QualityOfReading[test_val]
+        test_create_quality_of_reading_object = QualityOfReading[test_val]
 
 
     def test_dataquality_of_reading_for_val(self):
@@ -61,7 +63,7 @@ class TestEnums(unittest.TestCase):
 
     def test_create_unit_symbol_kind(self):
         test_val = 'VA'
-        test_data_qualifier_kind_object = UnitSymbolKind[test_val]
+        test_unit_symbol_kind_object = UnitSymbolKind[test_val]
 
 
     def test_unit_symbol_kind_for_val(self):
