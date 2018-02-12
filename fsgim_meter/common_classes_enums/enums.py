@@ -687,3 +687,34 @@ class UnitSymbolKind(MeasurementEnum):
     wb = 235
     yd2 = 236
     yd3 = 237
+
+
+class SiScaleCodeType(MeasurementEnum):
+    """
+        Class contains scaling factors for measurements
+
+        The attributes present in SiScaleCodeType collection are:
+
+        p: Pico 10**-12
+        n: Nano 10**-9
+        micro: Micro 10**-6
+        m: Milli 10**-3
+        c: Centi 10**-2
+        d: Deci 10**-1
+        k: Kilo 10**3
+        M: Mega 10**6
+        G: Giga 10**9
+        T: Tera 10**12
+        none: Native Scale
+    """
+    G = 0
+    M = 1
+    T = 2
+    c = 3
+    d = 4
+    k = 5
+    m = 6
+    micro = 7
+    n = 8
+    none = 9
+    p = 10

@@ -3,6 +3,7 @@ from fsgim_meter.common_classes_enums.enums import AccumulationKind
 from fsgim_meter.common_classes_enums.enums import DataQualifierKind
 from fsgim_meter.common_classes_enums.enums import QualityOfReading
 from fsgim_meter.common_classes_enums.enums import UnitSymbolKind
+from fsgim_meter.common_classes_enums.enums import SiScaleCodeType
 class TestEnums(unittest.TestCase):
     """
     Tests all enum classes
@@ -82,3 +83,21 @@ class TestEnums(unittest.TestCase):
     def test_unit_symbol_kind_for_inch(self):
         test_val = 'in'
         self.assertEqual(91, UnitSymbolKind.get_code(test_val))
+
+    def test_siscale_code_type(self):
+        test_val = 'G'
+        test_siscale_code_type_object = SiScaleCodeType[test_val]
+
+
+    def test_siscale_code_type_for_val(self):
+        test_val = 'G'
+        self.assertEqual(0, SiScaleCodeType.get_code(test_val))
+
+    def test_siscale_code_type_for_none(self):
+        test_val = ''
+        self.assertEqual('', SiScaleCodeType.get_code(test_val))
+
+    def test_siscale_code_type_raise_value_error(self):
+        test_val = 'wrong'
+        with self.assertRaises(ValueError):
+            SiScaleCodeType.get_code(test_val)
