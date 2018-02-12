@@ -25,6 +25,14 @@ class TestMeasurement(unittest.TestCase):
         self.assertEqual(test_dict,item.serialize())
 
 
+    def test_measurement_metadata_type_with_fail(self):
+        self.test_description = "ActivePower"
+        self.test_item_unit = 'ini'
+        self.test_si_scale_code = 'G'
+        with self.assertRaises(ValueError):
+            item = MeasurementMetadataType(self.test_description,self.test_item_unit,self.test_si_scale_code)
+
+
     def test_measurement_metadata_type_with_no_arguments(self):
         with self.assertRaises(TypeError):
             item = MeasurementMetadataType()
