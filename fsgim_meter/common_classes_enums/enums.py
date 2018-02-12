@@ -4,8 +4,17 @@ Defines enumerations of all classes
 
 from enum import Enum
 
+class MeasurementEnum(Enum):
 
-class AccumulationKind(Enum):
+    @classmethod
+    def get_code(cls,val):
+        if val == "":
+            return val
+        elif any(val == item.value for item in cls) is True:
+            return cls[val]
+
+
+class AccumulationKind(MeasurementEnum):
     """
             This class provides metadata about how the measurements described are made.
             These enumerated values refer to the common present and historic methods by
