@@ -117,4 +117,68 @@ class AccumulationKind(MeasurementEnum):
     latchingQuantity = 13
     boundedQuantity = 14
 
+class DataQualifierKind(MeasurementEnum):
 
+    """
+            This class qualifies the measurement as to what it represents -- for example a
+            minimum or maximum value or a nominal or nameplate value.
+
+            The attributes present in DataQualifierKind collection are:
+
+            high: Typically used to identify the high volume flow port of a compound water meter.
+            low:  Typically used to identify the low volume flow port of a compound water meter.
+            none:  Not Applicable.
+            average:  The value represents an average.
+            excess:  The value represents an amount over which a threshold was exceeded.
+            highThreshold:  The value represents a programmed threshold.
+            lowThreshold:  The value represents a programmed threshold.
+            maximum:  The highest value observed.
+            minimum:  The smallest value observed.
+            nominal:  The value represents nominal or nameplate values.
+            normal:  The value represents typical operating values.
+            secondMaximum:  The second highest value observed.
+            secondMinimum:  The second smallest value observed.
+            thirdMaximum:  The third highest value observed.
+            fourthMaximum:  The fourth highest value observed.
+            fifthMaximum:  The fifth highest value observed
+            sum:  The accumulated sum
+        """
+    average = 2
+    excess = 4
+    fifthMaximum = 25
+    fourthMaximum = 24
+    high = 27
+    highThreshold = 5
+    low = 28
+    lowThreshold = 7
+    maximum = 8
+    minimum = 9
+    nominal = 11
+    none = 0
+    normal = 12
+    secondMaximum = 16
+    secondMinimum = 17
+    sum = 26
+    thirdMaximum = 23
+
+class QualityOfReading(MeasurementEnum):
+    """
+        contains List of codes indicating the quality of the reading.
+
+        The attributes present in QualityOfReading collection are:
+
+        estimated: The quality is estimated.
+        forecast: This is forecast data.
+        mixed: There is a mixture of data quality.
+        raw: This is raw data.
+        validated: This data has been validated.
+        normalizedForWeather: This data has been normalized for weather.
+        other: There is no defined quality for this data
+    """
+    estimated = 0
+    forecast = 1
+    mixed = 2
+    raw = 3
+    validated = 4
+    normalizedForWeather = 5
+    other = 6
