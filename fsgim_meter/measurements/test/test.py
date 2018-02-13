@@ -5,9 +5,13 @@ from fsgim_meter.measurements.measurement_metadata_type import MeasurementMetada
 
 class TestMeasurement(unittest.TestCase):
 
+
+    ###Test cases for ItemBaseType###
     def test_item_base_type(self):
         item = ItemBaseType()
 
+
+    ###Test cases for MeasurementMetadataType###
     def test_measurement_metadata_type(self):
         self.test_description = "ActivePower"
         self.test_item_unit = 'in'
@@ -36,3 +40,6 @@ class TestMeasurement(unittest.TestCase):
     def test_measurement_metadata_type_with_no_arguments(self):
         with self.assertRaises(TypeError):
             item = MeasurementMetadataType()
+
+    ###Test cases for Measurement###
+

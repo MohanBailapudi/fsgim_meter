@@ -12,7 +12,7 @@ class ValidateUTC():
 
         :return:
         """
-        if utcdatetime = ""
+        if utcdatetime == "":
             return ""
         RE = re.compile(r'^\d{4}-\d{2}-\d{2}[ T]\d{2}:\d{2}:\d{2}[+-]\d{2}:\d{2}$')
         if bool(RE.search(utcdatetime)) == True:
@@ -36,6 +36,18 @@ class UTCDateTimeInterval(DateTimeInterval,ValidateUTC):
         self.duration = duration
         self.end = ValidateUTC.validateutc(end)
         self.start = ValidateUTC.validateutc(start)
+
+    def serialize(self):
+
+        """
+
+        :return:
+        """
+        return {
+            "duration" : self.duration,
+            "end" : self.end,
+            "start" : self.start
+        }
 
 
 
