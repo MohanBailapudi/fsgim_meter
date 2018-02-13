@@ -64,4 +64,8 @@ class TestMeasurement(unittest.TestCase):
         test_uncertainity = 250
         test_value = 250
         test_time_reference = UTCDateTimeInterval()
-        test = MeasurementQuantity(test_uncertainity,test_value,test_time_reference)
+        self.test_description = "ActivePower"
+        self.test_item_unit = 'in'
+        self.test_si_scale_code = 'G'
+        item = MeasurementMetadataType(self.test_description, self.test_item_unit, self.test_si_scale_code)
+        test = MeasurementQuantity(test_uncertainity,test_value,item,test_time_reference)
