@@ -3,7 +3,7 @@ from fsgim_meter.measurements.item_base_type import ItemBaseType
 from fsgim_meter.measurements.measurement_metadata_type import MeasurementMetadataType
 from fsgim_meter.measurements.measurement import Measurement
 from fsgim_meter.common_classes_enums.time.utc_datetime_interval import UTCDateTimeInterval
-
+from fsgim_meter.measurements.measurement_quantity import MeasurementQuantity
 
 class TestMeasurement(unittest.TestCase):
 
@@ -56,3 +56,12 @@ class TestMeasurement(unittest.TestCase):
     def test_measurement_blank_argumnet_type(self):
         val = ""
         test = Measurement(val)
+
+
+    ###Test cases for MeasurementQuantity###
+
+    def test_measurement_quantity_object(self):
+        test_uncertainity = 250
+        test_value = 250
+        test_time_reference = UTCDateTimeInterval()
+        test = MeasurementQuantity(test_uncertainity,test_value,test_time_reference)

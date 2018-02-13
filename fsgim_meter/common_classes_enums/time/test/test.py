@@ -48,4 +48,4 @@ class TestDateTime(unittest.TestCase):
             "start" : self.start
         }
         test = UTCDateTimeInterval(self.duration, self.end, self.start)
-        self.assertEquals(test_dict,test.serialize())
+        self.assertEqual(test_dict,test.serialize())

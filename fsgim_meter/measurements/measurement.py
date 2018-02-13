@@ -5,22 +5,22 @@ Defines Measurement Class
 
 class Measurement:
 
-    def __init__(self,timeReference = ''):
+    def __init__(self,time_reference = ''):
         """
 
         :param timeReference:
         """
-        self.timeReference = timeReference
+        self.time_reference = time_reference
 
     @property
-    def timeReference(self):
+    def time_reference(self):
         return self.timeReference
 
-    @timeReference.setter
-    def timeReference(self, val):
+    @time_reference.setter
+    def time_reference(self, val):
         if val == "":
             return ""
         if val.__class__.__name__ == 'UTCDateTimeInterval':
-            self._timeReference =  val
+            self._time_reference =  val
         else:
             raise TypeError("enter object of UTCDateTimeInterval class")
