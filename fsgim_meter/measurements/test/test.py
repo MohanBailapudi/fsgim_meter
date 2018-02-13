@@ -52,3 +52,7 @@ class TestMeasurement(unittest.TestCase):
     def test_measurement_argumnet_type(self):
         val = UTCDateTimeInterval()
         test = Measurement(val)
+
+    def test_measurement_blank_argumnet_type(self):
+        val = ""
+        test = Measurement(val)

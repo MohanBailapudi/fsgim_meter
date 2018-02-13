@@ -5,7 +5,7 @@ Defines Measurement Class
 
 class Measurement:
 
-    def __init__(self,timeReference):
+    def __init__(self,timeReference = ''):
         """
 
         :param timeReference:
@@ -18,6 +18,8 @@ class Measurement:
 
     @timeReference.setter
     def timeReference(self, val):
+        if val == "":
+            return ""
         if val.__class__.__name__ == 'UTCDateTimeInterval':
             self._timeReference =  val
         else:
