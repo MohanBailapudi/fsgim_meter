@@ -23,4 +23,4 @@ class Measurement:
         if val.__class__.__name__ == 'UTCDateTimeInterval':
             self._time_reference =  val
         else:
-            raise TypeError("enter object of UTCDateTimeInterval class")
+            raise TypeError("enter object of UTCDateTimeInterval classes")
