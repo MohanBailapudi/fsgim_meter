@@ -33,6 +33,21 @@ class MeasurementMetadataType(ItemBaseType):
         self.measurement_quality = measurement_quality
         self.resolution = resolution
 
+    @property
+    def item_description(self):
+        return self._item_description
+
+    @item_description.setter
+    def item_description(self, val):
+        self._item_description = val
+
+    @property
+    def item_units(self):
+        return self._item_units
+
+    @item_units.setter
+    def item_units(self, val):
+        self._item_units = val
 
     def serialize(self):
         """
