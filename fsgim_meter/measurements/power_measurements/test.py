@@ -79,8 +79,8 @@ class TestPowerMeasurements(unittest.TestCase):
         self.test_item_unit = 'in'
         self.test_si_scale_code = 'G'
         item = PowerRealType(self.test_description, self.test_item_unit, self.test_si_scale_code)
-        test = PowerRealQuantity(test_uncertainity, test_value, item)
-
+        test = PowerRealQuantity(test_uncertainity, test_value, item).serialize()
+        print(test)
     def test_power_reactive_quantity(self):
         """
 

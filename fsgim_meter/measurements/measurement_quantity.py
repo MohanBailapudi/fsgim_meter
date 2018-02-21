@@ -22,7 +22,7 @@ class MeasurementQuantity(Measurement):
 
     @property
     def measurement_metadata_type(self):
-        return self.measurement_metadata_type
+        return self._measurement_metadata_type
 
     @measurement_metadata_type.setter
     def measurement_metadata_type(self, val):
@@ -38,9 +38,9 @@ class MeasurementQuantity(Measurement):
         :return:
         """
         return {
-            "uncertainity" : self.duration,
-            "value" : self.end,
-            "timeReference" : self.time_reference,
+            "uncertainity" : self.uncertainity,
+            "value" : self.value,
+            "timeReference" : Measurement.time_reference,
             "measurement_metadata_type" : self.measurement_metadata_type.serialize()
 
         }
